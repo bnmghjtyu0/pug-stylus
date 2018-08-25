@@ -1,0 +1,23 @@
+{
+  "name": "pug",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-uglify": "^3.0.1"
+  },
+  "devDependencies": {
+    "gulp-connect": "^5.5.0",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-pug-lint": "^0.1.6",
+    "gulp-stylus": "^2.7.0"
+  }
+}

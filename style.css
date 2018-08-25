@@ -1,0 +1,18 @@
+body {
+  background: #87ceeb;
+}
+.btn-danger {
+  background: #f00;
+}
+.btn-success {
+  background: #ffc0cb;
+}
+.btn-info {
+  background: #87ceeb;
+}
+.btn-primary {
+  background: #ff7f50;
+}
+.btn-warning {
+  background: #808080;
+}

@@ -1,0 +1,93 @@
+- var pageTitle = 'Homepage'
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title #{pageTitle}
+    link(rel="stylesheet", href="style.css")
+    //- nav styles
+    //- style
+    //-   :stylus
+    //-     $color1 = #4A6D72
+    //-   ul
+    //-     display flex
+    //-     justify-content flex-end
+    //-     list-style none
+    //-   li
+    //-     padding 1rem 1.5rem
+    //-   a
+    //-     text-decoration none
+    //-     font-size 1.4rem
+    //-     color $color1
+    //-     font-family 'Helvetica Neue', Helvetica, arial, sen-serif
+
+  body
+  //- #1. goodbye angle brackets!
+  h2 Hello World
+  p World
+  //- #2. classes and IDs
+  div.box
+  div#box1
+  //- #3. indentation sensitive
+  div.box
+    h2 Title
+
+  div.box
+    ul
+      li
+        div.wrapper
+          h2 Title
+          p paragraph
+    p 
+      | Lorem ipsum dolor sit amet consectetur adipisicing elit. A, error?
+      | Lorem ipsum dolor sit amet consectetur adipisicing elit. A, error?
+      | Lorem ipsum dolor sit amet consectetur adipisicing elit. A, error?
+      | Lorem ipsum dolor sit amet consectetur adipisicing elit. A, error?
+  
+  //- #4. attributes inside parentheses
+  - var colors = ['primary','danger','info','success','warning']
+  div.box(data-name="box", id="myBox")
+  each color in colors
+    button(class=`btn-${color}`) #{color}
+  //- #5. variables
+  - var name = 'Richard'
+  h2 #{name}
+  //- #6. Interation
+  - var fruitBowl = ['banana', 'apple', 'mango']
+  ul.fruit-salad
+    each fruit, i in fruitBowl
+      li Fruit #{i+1}: #{fruit}
+  //- #7. template
+  //- https://www.youtube.com/watch?v=mFj9xfbI57s&list=PLHrxuCR-0CcSWiMuLf58iuIsNlP549-Sk&index=11
+  //- 模板
+  //- block config 全域變數  
+  //- body
+  //-   block main  鑲入頁面內容
+
+  //- 頁面
+  //- 載入模板 extends templates/layout
+  //- block append config 取代模板內的 config 變數
+  //- block main
+  //- block prepend main 模板 main 前加入語法
+
+  //- #8. Mixin = js-function = 物件導向
+  mixin product(title, imageID,price)
+    .product
+      .product__wrapper
+        img.product__img(
+          src='https://picsum.photos/500/400?random='+imageID
+        )
+        .product__content
+          h2.product__title #{title}
+          p.product__price AU$ #{price}
+
+  .products
+    +product('iphone5', 33 ,'499')
+    +product('iphone6', 44 ,'599')
+
+  //- #9. Navigation Module + 連結切換
+  //- https://www.youtube.com/watch?v=UCw7CtwrHNo&list=PLHrxuCR-0CcSWiMuLf58iuIsNlP549-Sk&index=14
+  //- block main
+  //-   include template/nav
